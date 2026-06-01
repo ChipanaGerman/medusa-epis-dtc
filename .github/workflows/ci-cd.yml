@@ -3,31 +3,49 @@ name: Pipeline Hito 2 - EPIS Medusa
 on:
   push:
     branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   Calidad-y-Construccion:
     runs-on: ubuntu-latest
+    
+    # Variables globales para que el linter y el build no fallen por falta de envs
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: pk_test_val_123
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://localhost:9000
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/medusa
+      REDIS_URL: redis://localhost:6379
+      MEDUSA_ADMIN_ONBOARDING_TYPE: default
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
+      - name: Checkout Código
+        uses: actions/checkout@v4
+
+      - name: Instalar pnpm
+        uses: pnpm/action-setup@v3
         with:
           version: 10
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
 
-      - name: Instalación
+      - name: Configurar Node.js (Versión 22 para evitar avisos)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Instalar Dependencias
         run: pnpm install --frozen-lockfile
 
-      - name: Linting (Detección de errores de estilo)
-        run: pnpm lint # Medusa ya trae este script en el package.json
+      - name: Ejecutar Linting (Detección de errores de estilo)
+        run: pnpm lint
         
       - name: Build Backend (Validación de tipos TS)
-        run: cd apps/backend && pnpm build
-        env:
-          DATABASE_URL: "postgres://postgres:postgres@localhost:5432/medusa"
-          REDIS_URL: "redis://localhost:6379"
-          MEDUSA_ADMIN_ONBOARDING_TYPE: "default"
+        run: |
+          cd apps/backend
+          pnpm build
 
       - name: Build Storefront (Validación de Frontend)
-        run: cd apps/storefront && pnpm build
+        run: |
+          cd apps/storefront
+          pnpm build

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Proyecto — Sprint 0 | Medusa Commerce Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="institution">UNIVERSIDAD NACIONAL DE SAN AGUSTÍN</span>
+                <span class="faculty">Facultad de Ingeniería de Producción y Servicios<br>Departamento Académico de Ingeniería de Sistemas e Informática</span>
+                <h1>Plan de Proyecto — Sprint 0</h1>
+                <h2>Implementación de Scrum + DevOps sobre Medusa Commerce Platform</h2>
+                <p class="course">Curso: Ingeniería y Procesos de Software — EPIS-UNSA 2026-A</p>
+                <p class="date">Hito 1 — Entrega: 13 de mayo de 2026</p>
+                
+                <div class="team-grid">
+                    <div class="member"><strong>German Arturo Chipana Jeronimo</strong> (Líder)<br>gchipanaj@unsa.edu.pe</div>
+                    <div class="member"><strong>Leonardo Juan José Baca Calsin</strong><br>lbacac@unsa.edu.pe</div>
+                    <div class="member"><strong>Giovanni Patrick Mejia Rondan</strong><br>gmejiar@unsa.edu.pe</div>
+                    <div class="member"><strong>Santiago Enrique Palma Apaza</strong><br>spalmaa@unsa.edu.pe</div>
+                    <div class="member"><strong>Sullca Mamani Mauro Snayder</strong><br>msullca@unsa.edu.pe</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout container">
+        <aside class="sidebar">
+            <nav id="toc">
+                <h3>Contenido</h3>
+                <ul>
+                    <li><a href="#info">1. Información General</a></li>
+                    <li><a href="#objetivo">2. Objetivo del Proyecto</a></li>
+                    <li><a href="#descripcion">3. Descripción de Medusa v2</a></li>
+                    <li><a href="#alcance">4. Alcance del Proyecto</a></li>
+                    <li><a href="#cronograma">5. Cronograma de Sprints</a></li>
+                    <li><a href="#herramientas">6. Herramientas DevOps</a></li>
+                    <li><a href="#backlog">7. Product Backlog</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section id="info" class="section">
+                <h2>1. Información General del Proyecto</h2>
+                <table class="info-table">
+                    <tr><th>Nombre del proyecto</th><td>Implementación de Scrum + DevOps aplicado a Medusa Commerce Platform</td></tr>
+                    <tr><th>Software base</th><td>Medusa v2 — <a href="https://github.com/medusajs/medusa" target="_blank">github.com/medusajs/medusa</a></td></tr>
+                    <tr><th>Tipo de sistema</th><td>Plataforma de comercio electrónico headless (SCM/E-commerce) para PYMEs</td></tr>
+                    <tr><th>Licencia</th><td>MIT License (verificada en el repositorio oficial)</td></tr>
+                    <tr><th>Stack tecnológico</th><td>TypeScript · Node.js · React · PostgreSQL · Redis · Docker Compose</td></tr>
+                    <tr><th>Repositorio fork</th><td><a href="https://github.com/ChipanaGerman/medusa-epis-2026" target="_blank">https://github.com/ChipanaGerman/medusa-epis-2026</a></td></tr>
+                    <tr><th>Docente</th><td>Ingeniero Robert Arisaca</td></tr>
+                    <tr><th>Semestre</th><td>2026-A</td></tr>
+                </table>
+            </section>
+
+            <section id="objetivo" class="section">
+                <h2>2. Objetivo del Proyecto</h2>
+                
+                <h3>2.1. Historia del Proyecto</h3>
+                <p>En 2020, el desarrollo de e-commerce estaba estancado en un modelo de "caja cerrada". Plataformas como Shopify o Magento forzaban a los ingenieros a trabajar dentro de estructuras monolíticas donde el frontend y el backend estaban rígidamente entrelazados. Cualquier personalización avanzada requería "hacks" que degradaban el rendimiento o generaban una deuda técnica insostenible. MedusaJS resolvió este conflicto al nacer como un motor API-first y headless en Node.js, diseñado específicamente para desarrolladores.</p>
+                <p>El camino de Medusa hasta la actualidad ha sido una evolución de madurez estratégica. En 2021 realizaron el pivot crítico hacia la licencia MIT. Su recorrido se aceleró con la creación de un ecosistema de plugins modulares, donde la comunidad tomó el relevo del desarrollo.</p>
+                <p>Hoy, en 2026, MedusaJS es la columna vertebral del comercio composable. Su relevancia se mantiene intacta porque es la única plataforma que garantiza la soberanía tecnológica, transformando el e-commerce de un "producto que se compra" a un "ecosistema de ingeniería" que escala sin límites.</p>
+
+                <h3>2.2. Objetivo</h3>
+                <div class="objective-box">
+                    <p>Implementar un proceso de desarrollo de software que integre la metodología ágil <strong>Scrum</strong> con prácticas <strong>DevOps automatizadas</strong>, aplicado sobre Medusa Commerce Platform — un proyecto open source con licencia MIT disponible en GitHub — con el propósito de que el equipo comprenda, analice y ejecute las fases del ciclo de vida del software mediante sprints iterativos e incrementales, integración continua (CI) y despliegue continuo (CD).</p>
+                </div>
+            </section>
+
+            <section id="descripcion" class="section">
+                <h2>3. Descripción de Medusa v2</h2>
+                <p>Medusa es una plataforma de comercio electrónico headless de código abierto, orientada a PYMEs que requieren soluciones de e-commerce y gestión de cadena de suministro (SCM) altamente personalizables.</p>
+                
+                <div class="architecture-grid">
+                    <div class="card">
+                        <h4>1. Capas de la Pila Tecnológica</h4>
+                        <ul>
+                            <li><strong>Rutas API (HTTP):</strong> Punto de entrada principal (Express.js).</li>
+                            <li><strong>Flujos de Trabajo:</strong> Lógica de negocio definida.</li>
+                            <li><strong>Módulos:</strong> Componentes especializados por dominio.</li>
+                            <li><strong>Almacén de Datos:</strong> Base de la pila para consultas.</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>2. Capa de Persistencia</h4>
+                        <ul>
+                            <li><strong>Obligatorio:</strong> PostgreSQL para el núcleo.</li>
+                            <li><strong>Inyección:</strong> Conexión inyectada en cada módulo.</li>
+                            <li><strong>Extensibilidad:</strong> Soporte para otras DBs (ej. MongoDB) mediante módulos.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>3. Ecosistema de Módulos e Integraciones</h3>
+                <p>La integración con sistemas de terceros se centraliza en dos tipos de módulos:</p>
+                <div class="architecture-grid">
+                    <div class="card">
+                        <h4>Módulos de Comercio</h4>
+                        <p>Están orientados a funciones para el usuario final y servicios comerciales. Ejemplos de integración incluyen:</p>
+                        <ul>
+                            <li><strong>Pagos:</strong> Stripe.</li>
+                            <li><strong>Gestión de pedidos:</strong> ShipStation.</li>
+                            <li><strong>Sistemas Externos:</strong> CMS avanzados (Sanity) o sistemas ERP (Odoo).</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Módulos de Infraestructura</h4>
+                        <p>Personalizan el funcionamiento interno y técnico del sistema. Los componentes principales son:</p>
+                        <ul>
+                            <li><strong>Análisis:</strong> Registro de eventos (ej. PostHog).</li>
+                            <li><strong>Almacenamiento en caché:</strong> Gestión de datos intensivos (vía Redis o Memcached). <em>Nota: El módulo actual fue introducido en la v2.11.0 para reemplazar el sistema de caché antiguo.</em></li>
+                            <li><strong>Eventos:</strong> Sistema de publicación/suscripción (ej. Redis).</li>
+                            <li><strong>Archivos:</strong> Gestión y carga de imágenes (ej. AWS S3).</li>
+                            <li><strong>Bloqueo:</strong> Prevención de conflictos en procesos concurrentes (ej. Redis).</li>
+                            <li><strong>Notificaciones:</strong> Envío de correos o alertas (ej. SendGrid).</li>
+                            <li><strong>Motor de Flujo de Trabajo:</strong> Orquestación de la lógica de negocio (ej. Redis).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>4. Flexibilidad de la Arquitectura</h3>
+                <div class="objective-box">
+                    <p>La arquitectura permite la sustitución total de cualquiera de los servicios de terceros mencionados. Esto garantiza que los desarrolladores puedan construir un ecosistema comercial a medida, adaptando tanto la infraestructura técnica como las herramientas de comercio según las necesidades del proyecto.</p>
+                </div>
+
+                <h4>Los principales módulos del sistema son:</h4>
+                <ul class="feature-list">
+                    <li><strong>Módulo de Catálogo de Productos</strong> — gestión de SKUs, variantes, categorías y colecciones</li>
+                    <li><strong>Módulo de Gestión de Pedidos</strong> — ciclo completo de órdenes, devoluciones y reembolsos</li>
+                    <li><strong>Módulo de Inventario y Stock</strong> — control multi-almacén con ubicaciones geográficas</li>
+                    <li><strong>Módulo de Clientes y Precios</strong> — segmentación B2B/B2C, multi-moneda y promociones</li>
+                    <li><strong>Módulo de Pagos y Envíos</strong> — integración con proveedores de pago y logística</li>
+                </ul>
+
+                <h3>Evaluación Técnica</h3>
+                <table class="data-table">
+                    <tr><th>Criterio</th><th>Evaluación</th></tr>
+                    <tr><td>Licencia</td><td>MIT — permite fork, modificación y uso libre sin restricciones académicas</td></tr>
+                    <tr><td>Dominio</td><td>E-commerce / SCM — sistema empresarial para PYMEs</td></tr>
+                    <tr><td>Stack</td><td>TypeScript + Node.js + React + PostgreSQL + Redis</td></tr>
+                    <tr><td>Módulos</td><td>5 módulos bien definidos — dentro del rango solicitado (3–5)</td></tr>
+                    <tr><td>Líneas de código</td><td>+200,000 líneas</td></tr>
+                    <tr><td>Docker Compose</td><td>Incluido oficialmente: medusa server + PostgreSQL + Redis</td></tr>
+                    <tr><td>Actividad GitHub</td><td>Actualizaciones diarias — más de 33,000 estrellas — comunidad muy activa</td></tr>
+                </table>
+            </section>
+
+            <section id="alcance" class="section">
+                <h2>4. Alcance del Proyecto</h2>
+                <p>El equipo realizará mejoras y extensiones funcionales organizadas en cuatro sprints de 15 días calendario cada uno, apuntando a agregar valor real al sistema basándose en las brechas de la comunidad oficial.</p>
+                
+                <div class="improvements">
+                    <div class="improvement-card">
+                        <h3>4.1. Mejora 1 — Dashboard de Reportes y Analíticas</h3>
+                        <p>Medusa v2 carece de un módulo de reportes integrado. Se implementará un dashboard con métricas clave: ventas, productos más vendidos, ingresos por región y devoluciones.</p>
+                        <ul>
+                            <li><strong>Tecnologías:</strong> React, Recharts, API REST de Medusa, TypeScript</li>
+                            <li><strong>Afecta a:</strong> Admin Dashboard — extensión de rutas UI</li>
+                            <li><strong>Valor:</strong> Decisiones basadas en datos sin herramientas externas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="improvement-card">
+                        <h3>4.2. Mejora 2 — Localización en Español</h3>
+                        <p>La interfaz actual está solo en inglés. Se implementará la internacionalización (i18n) al español, permitiendo su uso nativo a PYMEs peruanas e hispanohablantes.</p>
+                        <ul>
+                            <li><strong>Tecnologías:</strong> i18next, archivos JSON, Admin SDK de Medusa</li>
+                            <li><strong>Afecta a:</strong> Admin Dashboard (frontend React)</li>
+                            <li><strong>Valor:</strong> Amplía el acceso al sistema para mercados latinoamericanos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cronograma" class="section">
+                <h2>5. Cronograma de Sprints</h2>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Sprint</th>
+                                <th>Período</th>
+                                <th>Hito</th>
+                                <th>Peso</th>
+                                <th>Entregable principal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sprint 0</td>
+                                <td>29 Abr – 13 May 2026</td>
+                                <td>Hito 1</td>
+                                <td>15%</td>
+                                <td>Plan de proyecto, cronograma, GitHub Projects y Pages</td>
+                            </tr>
+                            <tr>
+                                <td>Sprint 1</td>
+                                <td>14 May – 28 May 2026</td>
+                                <td>Hito 2 (parcial)</td>
+                                <td>—</td>
+                                <td>Setup CI/CD, fork configurado, dashboard de analíticas</td>
+                            </tr>
+                            <tr>
+                                <td>Sprint 2</td>
+                                <td>29 May – 10 Jun 2026</td>
+                                <td>Hito 2</td>
+                                <td>60%</td>
+                                <td>Localización ES, CI/CD operativo</td>
+                            </tr>
+                            <tr>
+                                <td>Sprint 3</td>
+                                <td>11 Jun – 25 Jun 2026</td>
+                                <td>Hito 3 (parcial)</td>
+                                <td>—</td>
+                                <td>Mejoras finales, pruebas de regresión, documentación</td>
+                            </tr>
+                            <tr>
+                                <td>Sprint 4</td>
+                                <td>26 Jun – 13 Jul 2026</td>
+                                <td>Hito 3</td>
+                                <td>100%</td>
+                                <td>Artículo IEEE, presentación final, despliegue CD automatizado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="herramientas" class="section">
+                <h2>6. Herramientas Scrum + DevOps</h2>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Herramienta</th>
+                                <th>Propósito en el proyecto</th>
+                                <th>Sprint de uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge">GitHub Projects</span></td>
+                                <td>Tablero Scrum: Product Backlog, Sprint Backlog, Kanban</td>
+                                <td>Sprint 0 al 4</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge">GitHub Issues</span></td>
+                                <td>Historias de usuario, bugs, decisiones técnicas</td>
+                                <td>Sprint 1 al 4</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge">GitHub Actions</span></td>
+                                <td>Pipeline CI/CD: tests, lint, build Docker, deploy staging</td>
+                                <td>Sprint 1 al 4</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge">GitHub Pages</span></td>
+                                <td>Demo pública, documentación técnica, burndown chart</td>
+                                <td>Sprint 0 al 4</td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge">Docker Compose</span></td>
+                                <td>Contenedores: medusa server, PostgreSQL, Redis</td>
+                                <td>Sprint 1 al 4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="backlog" class="section">
+                <h2>7. Product Backlog — Sprint 0</h2>
+                <div class="table-responsive">
+                    <table class="data-table backlog-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Historia de Usuario / Tarea</th>
+                                <th>Prioridad</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Crear fork del repositorio Medusa en GitHub</td>
+                                <td><span class="status priority-high">Alta</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Analizar arquitectura y módulos de Medusa</td>
+                                <td><span class="status priority-high">Alta</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Elaborar cronograma del proyecto (4 sprints)</td>
+                                <td><span class="status priority-high">Alta</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Configurar GitHub Pages con presentación del Sprint 0</td>
+                                <td><span class="status priority-high">Alta</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Plan de proyecto (objetivo, alcance)</td>
+                                <td><span class="status priority-high">Alta</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p><strong>Universidad Nacional de San Agustín</strong> — Ingeniería y Procesos de Software — EPIS-UNSA 2026-A</p>
+            <p>Ingeniero Robert Arisaca</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

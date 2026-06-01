@@ -10,7 +10,6 @@ jobs:
   Validacion-y-Calidad:
     runs-on: ubuntu-latest
     
-    # Variables globales para evitar errores de Next.js y Medusa
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: pk_test_val_123
@@ -44,12 +43,10 @@ jobs:
           pnpm build
 
       - name: Validar Frontend (Storefront - Type Check)
-        # Usamos tsc para validar que el código no tenga errores 
-        # sin intentar conectar a una base de datos inexistente
+        # Cambiamos npx por pnpm exec para usar el TypeScript local
         run: |
           cd apps/storefront
-          npx tsc --noEmit
+          pnpm exec tsc --noEmit
 
       - name: Verificar Infraestructura Docker
-        # Prueba que el Dockerfile principal sea válido
         run: docker build -t medusa-epis-test .

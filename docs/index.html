@@ -508,6 +508,39 @@
                     </table>
                 </div>
             </section>
+            <section id="ci-cd" class="section">
+                <h2>11. Integración Continua y Despliegue Continuo</h2>
+                <p>El proyecto utiliza GitHub Actions para implementar un pipeline automatizado que incluye:</p>
+                <ul>
+                    <li><strong>Integración Continua (CI):</strong> Verificación automática del código mediante pruebas unitarias, análisis estático y linting.</li>
+                    <li><strong>Despliegue Continuo (CD):</strong> Publicación automática de la documentación en GitHub Pages y despliegue de entornos de staging.</li>
+                </ul>
+                <h3>Pipeline CI/CD</h3>
+                <p>El flujo de trabajo está definido en los archivos YAML del repositorio:</p>
+                <ul>
+                    <li><code>devops-unsa.yml</code>: Configuración de pruebas y validaciones.</li>
+                    <li><code>deploy-docs.yml</code>: Automatización del despliegue de la documentación.</li>
+                </ul>
+                <div style="margin-top: 15px;">
+                    <img src="https://github.com/ChipanaGerman/medusa-epis-dtc/actions/workflows/devops-unsa.yml/badge.svg" alt="CI Status">
+                    <img src="https://github.com/ChipanaGerman/medusa-epis-dtc/actions/workflows/deploy-docs.yml/badge.svg" alt="CD Status">
+                </div>
+            </section>
+
+            <section id="metricas" class="section">
+                <h2>12. Métricas de Gestión (Scrum)</h2>
+                <h3>Burndown Chart - Sprint 2</h3>
+                <p>Monitoreo de la velocidad del equipo y el trabajo restante durante la implementación de la infraestructura DevOps.</p>
+                
+                <div style="text-align: center; padding: 20px; background: #f1f5f9; border-radius: 8px; margin: 20px 0;">
+                    <img src="img/burndown-sprint2.png" alt="Burndown Chart Sprint 2" style="max-width: 100%; border: 1px solid #ddd; border-radius: 5px;">
+                </div>
+
+                <div class="objective-box">
+                    <h4>Análisis de Avance</h4>
+                    <p>Hacia el final del Sprint 2 (30-31 de mayo), se observa un incremento en el Remaining Work. Esto se debe a la <strong>identificación de dependencias críticas</strong> en las variables de entorno de GitHub Actions y la necesidad de refactorizar el Dockerfile para compatibilidad con Medusa v2. El equipo logró absorber este nuevo alcance asegurando que el pipeline CI/CD finalizara en estado exitoso (Verde).</p>
+                </div>
+            </section>
         </main>
     </div>
 

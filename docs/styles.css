@@ -345,10 +345,69 @@ a:hover {
     text-align: center;
 }
 
+.priority-low {
+    border-color: #ad781b; /* Dorado / Naranja oscuro */
+    background-color: #fbf0d9; /* Fondo dorado claro */
+    border: solid;
+    color: #ad781b; /* Letra dorada */
+    border-width: 2px;
+    }
+
+.priority-medium {
+    border-color: #d97325; /* Naranja */
+    background-color: #fce8d5; /* Fondo naranja claro */
+    border: solid;
+    color: #d97325; /* Letra naranja */
+    border-width: 2px;
+    }
+
 .priority-high {
-    background-color: #fee2e2;
-    color: #b91c1c;
-}
+    border-color: #cf3d38; /* Rojo */
+    background-color: #fee2e2; /* Fondo rojo claro */
+    border: solid;
+    color: #cf3d38; /* Letra roja */
+    border-width: 2px;
+    }
+
+.size-XS {
+    border-color: #2b7d34; /* Verde */
+    background-color: #eaf5eb; /* Fondo verde claro */
+    border: solid;
+    color: #2b7d34; /* Letra verde */
+    border-width: 2px;
+    }
+
+.size-S {
+    border-color: #7b4ec4; /* Púrpura */
+    background-color: #f1ebfa; /* Fondo púrpura claro */
+    border: solid;
+    color: #7b4ec4; /* Letra púrpura */
+    border-width: 2px;
+    }
+
+.size-M {
+    border-color: #cf3d38; /* Rojo */
+    background-color: #faebea; /* Fondo rojo claro */
+    color: #cf3d38; /* Letra roja */
+    border: solid;
+    border-width: 2px;
+    }
+
+.size-L {
+    border-color: #ad781b; /* Dorado / Naranja oscuro */
+    background-color: #fcf6eb; /* Fondo dorado claro */
+    border: solid;
+    color: #ad781b; /* Letra dorada */
+    border-width: 2px;
+    }
+
+.size-XL {
+    border-color: #c94b8e; /* Rosa */
+    background-color: #faebf3; /* Fondo rosa claro */
+    border: solid;
+    color: #c94b8e; /* Letra rosa */
+    border-width: 2px;
+    }
 
 .todo {
     background-color: #e0f2fe;

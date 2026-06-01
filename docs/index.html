@@ -13,7 +13,7 @@
             <div class="hero-content">
                 <span class="institution">UNIVERSIDAD NACIONAL DE SAN AGUSTÍN</span>
                 <span class="faculty">Facultad de Ingeniería de Producción y Servicios<br>Departamento Académico de Ingeniería de Sistemas e Informática</span>
-                <h1>Plan de Proyecto — Sprint 0</h1>
+                <h1>Plan de Proyecto</h1>
                 <h2>Implementación de Scrum + DevOps sobre Medusa Commerce Platform</h2>
                 <p class="course">Curso: Ingeniería y Procesos de Software — EPIS-UNSA 2026-A</p>
                 <p class="date">Hito 1 — Entrega: 13 de mayo de 2026</p>
@@ -41,6 +41,9 @@
                     <li><a href="#cronograma">5. Cronograma de Sprints</a></li>
                     <li><a href="#herramientas">6. Herramientas DevOps</a></li>
                     <li><a href="#backlog">7. Product Backlog</a></li>
+                    <li><a href="#sprint0">8. Sprint 0</a></li>
+                    <li><a href="#sprint1">9. Sprint 1</a></li>
+                    <li><a href="#sprint2">10. Sprint 2</a></li>
                 </ul>
             </nav>
         </aside>
@@ -54,7 +57,7 @@
                     <tr><th>Tipo de sistema</th><td>Plataforma de comercio electrónico headless (SCM/E-commerce) para PYMEs</td></tr>
                     <tr><th>Licencia</th><td>MIT License (verificada en el repositorio oficial)</td></tr>
                     <tr><th>Stack tecnológico</th><td>TypeScript · Node.js · React · PostgreSQL · Redis · Docker Compose</td></tr>
-                    <tr><th>Repositorio fork</th><td><a href="https://github.com/ChipanaGerman/medusa-epis-2026" target="_blank">https://github.com/ChipanaGerman/medusa-epis-2026</a></td></tr>
+                    <tr><th>Repositorio fork</th><td><a href="https://github.com/ChipanaGerman/medusa-epis-dtc" target="_blank">https://github.com/ChipanaGerman/medusa-epis-dtc</a></td></tr>
                     <tr><th>Docente</th><td>Ingeniero Robert Arisaca</td></tr>
                     <tr><th>Semestre</th><td>2026-A</td></tr>
                 </table>
@@ -198,35 +201,35 @@
                                 <td>29 Abr – 13 May 2026</td>
                                 <td>Hito 1</td>
                                 <td>15%</td>
-                                <td>Plan de proyecto, cronograma, GitHub Projects y Pages</td>
+                                <td>Gestión de Proyecto, Configuración de Entorno Crítico y Análisis de Arquitectura</td>
                             </tr>
                             <tr>
                                 <td>Sprint 1</td>
                                 <td>14 May – 28 May 2026</td>
                                 <td>Hito 2 (parcial)</td>
                                 <td>—</td>
-                                <td>Setup CI/CD, fork configurado, dashboard de analíticas</td>
+                                <td>Infraestructura Base, Análisis del Código , Scrum Completo y Entorno Local</td>
                             </tr>
                             <tr>
                                 <td>Sprint 2</td>
                                 <td>29 May – 10 Jun 2026</td>
                                 <td>Hito 2</td>
                                 <td>60%</td>
-                                <td>Localización ES, CI/CD operativo</td>
+                                <td>Automatización de Pipeline CI, Dockerización y Localización Base</td>
                             </tr>
                             <tr>
                                 <td>Sprint 3</td>
                                 <td>11 Jun – 25 Jun 2026</td>
                                 <td>Hito 3 (parcial)</td>
                                 <td>—</td>
-                                <td>Mejoras finales, pruebas de regresión, documentación</td>
+                                <td>Desarrollo de Dashboard, Analíticas e Integración de Servicios API</td>
                             </tr>
                             <tr>
                                 <td>Sprint 4</td>
                                 <td>26 Jun – 13 Jul 2026</td>
                                 <td>Hito 3</td>
                                 <td>100%</td>
-                                <td>Artículo IEEE, presentación final, despliegue CD automatizado</td>
+                                <td>Despliegue Continuo (CD), Documentación Científica IEEE y Cierre</td>
                             </tr>
                         </tbody>
                     </table>
@@ -274,9 +277,44 @@
                     </table>
                 </div>
             </section>
-
             <section id="backlog" class="section">
-                <h2>7. Product Backlog — Sprint 0</h2>
+                <h2>7. Product Backlog</h2>
+                <div class="table-responsive">
+                    <table class="data-table backlog-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Historia de Usuario / Tarea</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Gestión de Proyecto, Configuración de Entorno Crítico y Análisis de Arquitectura</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Infraestructura Base, Análisis del Código , Scrum Completo y Entorno Local</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Automatización de Pipeline CI, Dockerización y Localización Base</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Desarrollo de Dashboard, Analíticas e Integración de Servicios API</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Despliegue Continuo (CD), Documentación Científica IEEE y Cierre</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="sprint0" class="section">
+                <h2>8. Sprint 0</h2>
+                <h3>Gestión de Proyecto, Configuración de Entorno Crítico y Análisis de Arquitectura</h3>
                 <div class="table-responsive">
                     <table class="data-table backlog-table">
                         <thead>
@@ -284,6 +322,8 @@
                                 <th>#</th>
                                 <th>Historia de Usuario / Tarea</th>
                                 <th>Prioridad</th>
+                                <th>Tamaño</th>
+                                <th>Tiempo Estimado (horas)</th>
                                 <th>Estado</th>
                             </tr>
                         </thead>
@@ -291,32 +331,178 @@
                             <tr>
                                 <td>1</td>
                                 <td>Crear fork del repositorio Medusa en GitHub</td>
-                                <td><span class="status priority-high">Alta</span></td>
+                                <td><span class="status priority-low">P0</span></td>
+                                <td><span class="status size-XS">XS</span></td>
+                                <td><span>2</span></td>
                                 <td><span class="status todo">Hecho</span></td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Analizar arquitectura y módulos de Medusa</td>
-                                <td><span class="status priority-high">Alta</span></td>
+                                <td>Configurar GitHub Pages con presentación del Sprint 0</td>
+                                <td><span class="status priority-low">P0</span></td>
+                                <td><span class="status size-M">M</span></td>
+                                <td><span>5</span></td>
                                 <td><span class="status todo">Hecho</span></td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Elaborar cronograma del proyecto (4 sprints)</td>
-                                <td><span class="status priority-high">Alta</span></td>
+                                <td>Analizar arquitectura y módulos de Medusa</td>
+                                <td><span class="status priority-low">P0</span></td>
+                                <td><span class="status size-M">M</span></td>
+                                <td><span>8</span></td>
                                 <td><span class="status todo">Hecho</span></td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Configurar GitHub Pages con presentación del Sprint 0</td>
-                                <td><span class="status priority-high">Alta</span></td>
+                                <td>Plan de proyecto (objetivo, alcance)</td>
+                                <td><span class="status priority-low">P0</span></td>
+                                <td><span class="status size-M">M</span></td>
+                                <td><span>6</span></td>
                                 <td><span class="status todo">Hecho</span></td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>Plan de proyecto (objetivo, alcance)</td>
-                                <td><span class="status priority-high">Alta</span></td>
+                                <td>Elaborar cronograma del proyecto (4 sprints)</td>
+                                <td><span class="status priority-low">P0</span></td>
+                                <td><span class="status size-S">S</span></td>
+                                <td><span>3</span></td>
                                 <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="sprint1" class="section">
+                <h2>9. Sprint 1</h2>
+                <h3>Infraestructura Base, Análisis del Código , Scrum Completo y Entorno Local</h3>
+                <div class="table-responsive">
+                    <table class="data-table backlog-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Historia de Usuario / Tarea</th>
+                                <th>Prioridad</th>
+                                <th>Tamaño</th>
+                                <th>Tiempo Estimado (horas)</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Comprender el flujo de la capa HTTP y rutas de la API</td>
+                                <td><span class="status priority-high">P0</span></td>
+                                <td><span class="status size-M">M</span></td>
+                                <td><span>8</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Entender la capa de persistencia y conexión a PostgreSQL</td>
+                                <td><span class="status priority-high">P0</span></td>
+                                <td><span class="status size-M">M</span></td>
+                                <td><span>8</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Recorrer la estructura del frontend React del Admin Dashboard</td>
+                                <td><span class="status priority-high">P0</span></td>
+                                <td><span class="status size-M">M</span></td>
+                                <td><span>8</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Analizar el sistema de eventos e inyección de dependencias</td>
+                                <td><span class="status priority-high">P0</span></td>
+                                <td><span class="status size-M">M</span></td>
+                                <td><span>10</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Investigar la viabilidad y el contexto de la API TAPP</td>
+                                <td><span class="status priority-medium">P1</span></td>
+                                <td><span class="status size-L">L</span></td>
+                                <td><span>10</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Implementación completa de marco de trabajo ágil con Scrum</td>
+                                <td><span class="status priority-high">P0</span></td>
+                                <td><span class="status size-S">S</span></td>
+                                <td><span >5</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Actualizar el github pages con el cronograma completo del marco de trabajo de scrum</td>
+                                <td><span class="status priority-medium">P1</span></td>
+                                <td><span class="status size-S">S</span></td>
+                                <td><span>2</span></td>
+                                <td><span class="status todo">Hecho</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="sprint2" class="section">
+                <h2>10. Sprint 2</h2>
+                <h3>Automatización de Pipeline CI, Dockerización y Localización Base</h3>
+                <div class="table-responsive">
+                    <table class="data-table backlog-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Historia de Usuario / Tarea</th>
+                                <th>Prioridad</th>
+                                <th>Tamaño</th>
+                                <th>Tiempo Estimado (horas)</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Configurar el entorno local de desarrollo con contenedores (Docker)</td>
+                                <td><span class="status priority-low">P0</span></td>
+                                <td><span class="status size-M">M</span></td>
+                                <td><span>10</span></td>
+                                <td><span class="status todo">Sprint Backlog</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Preparar los archivos JSON para la localización al español</td>
+                                <td><span class="status priority-medium">P1</span></td>
+                                <td><span class="status size-S">S</span></td>
+                                <td><span>4</span></td>
+                                <td><span class="status todo">Sprint Backlog</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Documentar los requisitos técnicos del dashboard de analíticas</td>
+                                <td><span class="status priority-medium">P1</span></td>
+                                <td><span class="status size-S">S</span></td>
+                                <td><span>5</span></td>
+                                <td><span class="status todo">Sprint Backlog</span></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Establecer el flujo de integración continua en GitHub Actions</td>
+                                <td><span class="status priority-low">P0</span></td>
+                                <td><span class="status size-L">L</span></td>
+                                <td><span>16</span></td>
+                                <td><span class="status" style="background-color:antiquewhite; color:rgb(228, 137, 0)">En Progreso</span></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Resolver el despliegue automatizado en el entorno de staging</td>
+                                <td><span class="status priority-low">P0</span></td>
+                                <td><span class="status size-L">L</span></td>
+                                <td><span>16</span></td>
+                                <td><span class="status" style="background-color:antiquewhite; color:rgb(228, 137, 0)">En Progreso</span></td>
                             </tr>
                         </tbody>
                     </table>

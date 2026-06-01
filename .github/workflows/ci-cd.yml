@@ -1,0 +1,31 @@
+name: Pipeline Hito 2 - EPIS Medusa
+
+on:
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  Calidad-y-Construccion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalación
+        run: pnpm install --frozen-lockfile
+
+      - name: Linting (Detección de errores de estilo)
+        run: pnpm lint # Medusa ya trae este script en el package.json
+        
+      - name: Build Backend (Validación de tipos TS)
+        run: cd apps/backend && pnpm build
+        env:
+          DATABASE_URL: "postgres://postgres:postgres@localhost:5432/medusa"
+
+      - name: Build Storefront (Validación de Frontend)
+        run: cd apps/storefront && pnpm build

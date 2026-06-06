@@ -57,7 +57,7 @@ services:
     environment:
       - NEXT_PUBLIC_MEDUSA_BACKEND_URL=http://medusa:9000
     env_file:
-      - apps/storefront/.env
+      - apps/storefront/.env.template
     volumes:
       - .:/server
       - /server/node_modules

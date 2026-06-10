@@ -17,20 +17,21 @@
                 <h2>Implementación de Scrum + DevOps sobre Medusa Commerce Platform</h2>
                 <p class="course">Curso: Ingeniería y Procesos de Software — EPIS-UNSA 2026-A</p>
                 <p class="date">Hito 1 — Entrega: 13 de mayo de 2026</p>
+                <p class="date">Hito 2 — Entrega: 10 de junio de 2026</p>
                 
                 <div class="team-grid">
-                    <div class="member"><strong>German Arturo Chipana Jeronimo</strong> (Líder)<br>gchipanaj@unsa.edu.pe</div>
+                    <div class="member"><strong>German Arturo Chipana Jeronimo</strong> (Líder Sprint 0) <br>gchipanaj@unsa.edu.pe</div>
                     <div class="member"><strong>Leonardo Juan José Baca Calsin</strong><br>lbacac@unsa.edu.pe</div>
-                    <div class="member"><strong>Giovanni Patrick Mejia Rondan</strong><br>gmejiar@unsa.edu.pe</div>
+                    <div class="member"><strong>Giovanni Patrick Mejia Rondan</strong> (Líder Sprint 2) <br>gmejiar@unsa.edu.pe</div>
                     <div class="member"><strong>Santiago Enrique Palma Apaza</strong><br>spalmaa@unsa.edu.pe</div>
-                    <div class="member"><strong>Sullca Mamani Mauro Snayder</strong><br>msullca@unsa.edu.pe</div>
+                    <div class="member"><strong>Sullca Mamani Mauro Snayder</strong> (Líder Sprint 1) <br>msullca@unsa.edu.pe</div>
                 </div>
             </div>
         </div>
     </header>
 
     <div class="layout container">
-        <aside class="sidebar">
+        <aside class="sidebar" style="overflow-y: auto; max-height:500px; overflow-y: scroll">
             <nav id="toc">
                 <h3>Contenido</h3>
                 <ul>
@@ -44,6 +45,10 @@
                     <li><a href="#sprint0">8. Sprint 0</a></li>
                     <li><a href="#sprint1">9. Sprint 1</a></li>
                     <li><a href="#sprint2">10. Sprint 2</a></li>
+                    <li><a href="#sprint3">11. Sprint 3</a></li>
+                    <li><a href="#sprint4">12. Sprint 4</a></li>
+                    <li><a href="#ci-cd">13. Integración Continua y Despliegue Continuo</a></li>
+                    <li><a href="#metricas">14. Métricas de Gestión (Scrum)</a></li>
                 </ul>
             </nav>
         </aside>
@@ -290,23 +295,63 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Gestión de Proyecto, Configuración de Entorno Crítico y Análisis de Arquitectura</td>
+                                <td>Yo como Dueño de la PYME, quiero ver un cronograma claro para asegurar que las mejoras de la tienda se entreguen a tiempo.</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Infraestructura Base, Análisis del Código , Scrum Completo y Entorno Local</td>
+                                <td>Yo como Dueño de la PYME, quiero que el código fuente esté en un repositorio Git privado para tener control total y un historial de cambios del activo digital más importante de mi negocio.</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>Automatización de Pipeline CI, Dockerización y Localización Base</td>
+                                <td>Yo como Administrador de la Tienda, quiero un diagnóstico estructural de la plataforma para garantizar que soporte el flujo operativo del negocio.</td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>Desarrollo de Dashboard, Analíticas e Integración de Servicios API</td>
+                                <td>Yo como Administrador de la Tienda, quiero un mapeo completo de la arquitectura del código (Frontend, HTTP y Eventos) para asegurar que las futuras actualizaciones no rompan la funcionalidad actual.</td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>Despliegue Continuo (CD), Documentación Científica IEEE y Cierre</td>
+                                <td>Yo como Gerente de Operaciones, quiero analizar la capa de base de datos (PostgreSQL) y las APIs (TAPP) para confirmar la viabilidad técnica de integrar nueva información al sistema.</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Yo como Dueño de la PYME, quiero implementar una metodología ágil (Scrum) y publicar un cronograma interactivo para tener visibilidad transparente del trabajo del equipo de desarrollo.</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Yo como Administrador del Sistema, quiero automatizar el entorno con contenedores (Docker) y pipelines (GitHub Actions) para tener un flujo de trabajo estable y predecible.</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Yo como Gerente de Operaciones, quiero habilitar el despliegue automático en un entorno de pruebas (Staging) para validar los cambios antes de publicarlos en producción.</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Yo como Dueño de la PYME, quiero estructurar los archivos de idioma (JSON) y documentar los requerimientos de analítica para preparar la plataforma para los usuarios locales.</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Yo como Gerente de Ventas, quiero que el sistema unifique los datos comerciales para consumirlos en reportes analíticos en tiempo real.</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>Yo como Administrador de la Tienda, quiero ver gráficos dinámicos de ingresos y devoluciones para tomar decisiones de stock eficientes.</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>Yo como Operador de Inventario, quiero gestionar productos y pedidos completamente en español para reducir errores de despacho.</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>Yo como Gerente de Operaciones, quiero que las actualizaciones estables se desplieguen solas en una web de pruebas para certificarlas antes del lanzamiento.</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>Yo como Dueño de la PYME, quiero un informe técnico estandarizado para certificar formalmente la calidad de la ingeniería de mi plataforma.</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>Yo como Dueño de la PYME, quiero revisar el reporte de rendimiento e historial de entregas para dar por concluido el proyecto tecnológico de mi negocio.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -314,7 +359,8 @@
             </section>
             <section id="sprint0" class="section">
                 <h2>8. Sprint 0</h2>
-                <h3>Gestión de Proyecto, Configuración de Entorno Crítico y Análisis de Arquitectura</h3>
+                <h3 style="color:black; font-family:Arial">Objetivo: Establecer los cimientos del proyecto asegurando la planificación y el control seguro del código.</h3>
+                <h3 style="font-family:Arial">Historias de usuarios utilzadas: 1, 2, 3</h3>
                 <div class="table-responsive">
                     <table class="data-table backlog-table">
                         <thead>
@@ -374,7 +420,9 @@
             </section>
             <section id="sprint1" class="section">
                 <h2>9. Sprint 1</h2>
-                <h3>Infraestructura Base, Análisis del Código , Scrum Completo y Entorno Local</h3>
+                <h3 style="color:black; font-family:Arial">Objetivo: Ejecutar el diagnóstico técnico de la arquitectura actual (Frontend, Backend y Base de Datos) y establecer el marco de trabajo ágil para la gestión del proyecto.</h3>
+                <h3 style="font-family:Arial">Historias de usuarios utilzadas: 4, 5, 6</h3>
+                
                 <div class="table-responsive">
                     <table class="data-table backlog-table">
                         <thead>
@@ -449,7 +497,9 @@
                 </div>
             </section>
             <section id="sprint2" class="section">
-                <h2>10. Sprint 2</h2>
+            <h2>10. Sprint 2</h2>
+                <h3 style="color:black; font-family:Arial">Objetivo: Automatizar la infraestructura de desarrollo y despliegue (CI/CD), preparar la localización al español y definir los requisitos técnicos de las métricas comerciales.</h3>
+                <h3 style="font-family:Arial">Historias de usuarios utilzadas: 7, 8, 9</h3>
                 <h3>Automatización de Pipeline CI, Dockerización y Localización Base</h3>
                 <div class="table-responsive">
                     <table class="data-table backlog-table">
@@ -508,8 +558,16 @@
                     </table>
                 </div>
             </section>
+            <section id="sprint3" class="section">
+                <h2>11. Sprint 3</h2>
+                <h3>En planeamiento</h3>
+            </section>
+            <section id="sprint4" class="section">
+                <h2>12. Sprint 4</h2>
+                <h3>En planeamiento</h3>
+            </section>
             <section id="ci-cd" class="section">
-                <h2>11. Integración Continua y Despliegue Continuo</h2>
+                <h2>13. Integración Continua y Despliegue Continuo</h2>
                 <p>El proyecto utiliza GitHub Actions para implementar un pipeline automatizado que incluye:</p>
                 <ul>
                     <li><strong>Integración Continua (CI):</strong> Verificación automática del código mediante pruebas unitarias, análisis estático y linting.</li>
@@ -528,7 +586,7 @@
             </section>
 
             <section id="metricas" class="section">
-                <h2>12. Métricas de Gestión (Scrum)</h2>
+                <h2>14. Métricas de Gestión (Scrum)</h2>
                 <h3>Burndown Chart - Sprint 2</h3>
                 <p>Monitoreo de la velocidad del equipo y el trabajo restante durante la implementación de la infraestructura DevOps.</p>
                 
@@ -538,7 +596,7 @@
 
                 <div class="objective-box">
                     <h4>Análisis de Avance</h4>
-                    <p>Hacia el final del Sprint 2 (30-31 de mayo), se observa un incremento en el Remaining Work. Esto se debe a la <strong>identificación de dependencias críticas</strong> en las variables de entorno de GitHub Actions y la necesidad de refactorizar el Dockerfile para compatibilidad con Medusa v2. El equipo logró absorber este nuevo alcance asegurando que el pipeline CI/CD finalizara en estado exitoso (Verde).</p>
+                    <p>Hacia el final del Sprint 2 (10 de junio), se observa un incremento en el Remaining Work. Esto se debe a la <strong>identificación de dependencias críticas</strong> en las variables de entorno de GitHub Actions y la necesidad de refactorizar el Dockerfile para compatibilidad con Medusa v2. El equipo logró absorber este nuevo alcance asegurando que el pipeline CI/CD finalizara en estado exitoso (Verde).</p>
                 </div>
             </section>
         </main>

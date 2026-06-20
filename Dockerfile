@@ -1,10 +1,16 @@
 FROM node:20-alpine
-WORKDIR /server
-RUN npm install pnpm@10.11.1 -g
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json .npmrc ./
-COPY apps/backend/package.json ./apps/backend/
-COPY apps/storefront/package.json ./apps/storefront/
-RUN pnpm install --frozen-lockfile
+WORKDIR /app
+
+RUN apk add --no-cache libc6-compat python3 make g++
+
+COPY package.json package-lock.json* ./
+RUN npm install --legacy-peer-deps
+
 COPY . .
-EXPOSE 9000 5173 8000
-ENTRYPOINT ["./start.sh"]
+
+RUN npm run build
+
+EXPOSE 9000
+
+# Migra y luego inicia en modo producción
+CMD sh -c "npx medusa db:migrate && npx medusa start"

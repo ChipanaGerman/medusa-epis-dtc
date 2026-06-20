@@ -3,14 +3,24 @@ WORKDIR /app
 
 RUN apk add --no-cache libc6-compat python3 make g++
 
-COPY package.json package-lock.json* ./
-RUN npm install --legacy-peer-deps
+# Instalar pnpm
+RUN corepack enable && corepack prepare pnpm@10.11.1 --activate
 
-COPY . .
+# Copiar archivos de configuración del monorepo
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
 
-RUN npm run build
+# Copiar package.json del backend
+COPY apps/backend/package.json ./apps/backend/
+
+# Instalar dependencias
+RUN pnpm install --frozen-lockfile
+
+# Copiar código fuente del backend
+COPY apps/backend ./apps/backend
+
+WORKDIR /app/apps/backend
 
 EXPOSE 9000
+ENV NODE_ENV=production
 
-# Migra y luego inicia en modo producción
-CMD sh -c "npx medusa db:migrate && npx medusa start"
+CMD sh -c "pnpm medusa db:migrate && pnpm start"

@@ -7,4 +7,5 @@ COPY apps/storefront/package.json ./apps/storefront/
 RUN pnpm install --frozen-lockfile
 COPY . .
 EXPOSE 9000 5173 8000
-ENTRYPOINT ["./start.sh"]
+RUN chmod +x start.sh
+ENTRYPOINT ["sh", "./start.sh"]

@@ -346,10 +346,10 @@ a:hover {
 }
 
 .priority-low {
-    border-color: #ad781b; /* Dorado / Naranja oscuro */
-    background-color: #fbf0d9; /* Fondo dorado claro */
+    border-color: #cf3d38; /* Dorado / Naranja oscuro */
+    background-color: #fee2e2; /* Fondo dorado claro */
     border: solid;
-    color: #ad781b; /* Letra dorada */
+    color: #cf3d38; /* Letra dorada */
     border-width: 2px;
     }
 
@@ -362,10 +362,10 @@ a:hover {
     }
 
 .priority-high {
-    border-color: #cf3d38; /* Rojo */
-    background-color: #fee2e2; /* Fondo rojo claro */
+    border-color: #ad781b; /* Rojo */
+    background-color: #fbf0d9; /* Fondo rojo claro */
     border: solid;
-    color: #cf3d38; /* Letra roja */
+    color: #ad781b; /* Letra roja */
     border-width: 2px;
     }
 

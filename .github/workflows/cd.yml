@@ -1,8 +1,10 @@
 name: CD - Build and Push Medusa Image
 
 on:
-  push:
-    branches: [ main ]
+  workflow_run:
+    workflows: ["DevOps Pipeline UNSA - Hito 2"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 env:
@@ -12,6 +14,7 @@ env:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     permissions:
       contents: read
       packages: write
@@ -19,6 +22,8 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Login a GitHub Container Registry
         uses: docker/login-action@v3
@@ -34,4 +39,4 @@ jobs:
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.workflow_run.head_sha || github.sha }}

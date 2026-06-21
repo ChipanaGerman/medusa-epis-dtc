@@ -9,7 +9,32 @@ on:
 jobs:
   Validacion-y-Calidad:
     runs-on: ubuntu-latest
-    
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_DB: medusa
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY: pk_test_val_123
@@ -18,6 +43,8 @@ jobs:
       REDIS_URL: redis://localhost:6379
       MEDUSA_ADMIN_ONBOARDING_TYPE: default
       NEXT_DISABLE_ESLINT: 1
+      JWT_SECRET: test_jwt_secret
+      COOKIE_SECRET: test_cookie_secret
 
     steps:
       - name: Checkout Código
@@ -37,13 +64,22 @@ jobs:
       - name: Instalar Dependencias
         run: pnpm install --frozen-lockfile
 
+      - name: Lint Backend (Type Check)
+        run: |
+          cd apps/backend
+          pnpm exec tsc --noEmit
+
       - name: Compilar Backend (Medusa v2)
         run: |
           cd apps/backend
           pnpm build
 
+      - name: Ejecutar Migraciones (Backend)
+        run: |
+          cd apps/backend
+          pnpm medusa db:migrate
+
       - name: Validar Frontend (Storefront - Type Check)
-        # Cambiamos npx por pnpm exec para usar el TypeScript local
         run: |
           cd apps/storefront
           pnpm exec tsc --noEmit

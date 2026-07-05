@@ -53,7 +53,8 @@ yarn-error.log*
 .Trashes
 ehthumbs.db
 Thumbs.db
-**/.DS_Storeapps/backend/.env.template
+**/.DS_Store
+apps/backend/.env.template
 apps/storefront/.env.template
 apps/backend/.env
 apps/storefront/.env

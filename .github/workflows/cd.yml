@@ -1,4 +1,4 @@
-name: CD - Build and Push Medusa Image
+name: CD - Deploy a Droplet
 
 on:
   workflow_run:
@@ -7,36 +7,19 @@ on:
     branches: [main]
   workflow_dispatch:
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: chipanagerman/medusa-epis-2026
-
 jobs:
-  build-and-push:
+  deploy:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
-    permissions:
-      contents: read
-      packages: write
 
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
+      - name: Deploy por SSH al Droplet
+        uses: appleboy/ssh-action@v1.0.3
         with:
-          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
-
-      - name: Login a GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build y push de la imagen
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.workflow_run.head_sha || github.sha }}
+          host: ${{ secrets.DROPLET_HOST }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          script: |
+            cd ~/medusa-epis-dtc
+            git pull origin main
+            docker compose up -d --build
